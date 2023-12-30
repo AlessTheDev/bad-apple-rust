@@ -1,6 +1,7 @@
 # Bad Apple with Rust Keywords
 This is a program that converts black and white frames to rust keywords, then take a screenshot of your screen and store it in the rendered folder \
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iGrrya5BxBM/0.jpg)](https://www.youtube.com/watch?v=iGrrya5BxBM)
+[![Youtube thumbnail](https://github.com/AlessTheDev/bad-apple-rust/assets/96922088/e579366f-6d94-4394-92d2-7780b67b8416)](https://www.youtube.com/watch?v=iGrrya5BxBM)
+
 
 ## How to render bad apple
 1. Clone the repository \
