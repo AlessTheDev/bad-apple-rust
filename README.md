@@ -5,7 +5,7 @@ This is a program that converts black and white frames to rust keywords, then ta
 
 ## How to render bad apple
 1. Clone the repository \
-`git clone ...`\
+`git clone https://github.com/AlessTheDev/bad-apple-rust.git`\
 `cd bad-apple-rust` 
 2. Download the bad apple intro
 3. use ffmpeg to extract frames\
