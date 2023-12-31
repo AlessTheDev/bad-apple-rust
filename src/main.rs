@@ -55,6 +55,8 @@ fn take_screenshot(frame_n: usize) {
     
 }
 
+/// Converts a number to glob pattern (ex 23 -> 0023)
+/// num_len the new number length (ex. 5 -> 00000)
 fn convert_to_glob_pattern(number: usize, num_len: usize) -> String {
     let mut num_string = number.to_string();
     loop {
@@ -65,6 +67,7 @@ fn convert_to_glob_pattern(number: usize, num_len: usize) -> String {
     };
 }
 
+/// Returns a vector of strings containing all the keywords foud in keywords.txt 
 fn get_keywords() -> Vec<String> {
     let mut keys_file = File::open("keywords.txt").expect("Can't open the file");
 
@@ -77,6 +80,7 @@ fn get_keywords() -> Vec<String> {
     content.split(' ').map(|s| s.to_string()).collect()
 }
 
+/// Writes the image in the file using the keywords
 fn write_image_data(data: ImageData, out_file: &str) {
     // read rust keywords form "keywords.txt"
     let keys: Vec<String> = get_keywords();
@@ -109,6 +113,8 @@ fn write_image_data(data: ImageData, out_file: &str) {
     let _ = fs::write(out_file, to_write);
 }
 
+/// Retuns a random keyword given a length 
+/// it can concatenate multiple keywords to reach the required length
 fn get_random_keyword(keywords: Vec<String>, len: usize) -> String {
     if len == 1 {
         return "-".to_string();
@@ -137,6 +143,9 @@ fn get_random_keyword(keywords: Vec<String>, len: usize) -> String {
     choosen
 }
 
+/// Returns a vector of Strings containing row data
+/// 1 for white pixels and 0 for black ones
+/// the scale determines how many pixels get skipped
 fn get_image_data(path: &str, scale: u32) -> Vec<String> {
     let image = image::open(path).unwrap();
 
